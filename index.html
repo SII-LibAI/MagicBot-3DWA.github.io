@@ -1,41 +1,268 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Project</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MagicBot-3DWA | Project Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg: #f7f8fb;
+      --fg: #0f172a;
+      --muted: #64748b;
+      --accent: #0ea5e9;
+      --border: rgba(15, 23, 42, 0.12);
+      --maxw: 980px;
+    }
+    *{ box-sizing: border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:"DM Sans", system-ui, -apple-system, Segoe UI, sans-serif; }
+    body{
+      background:
+        radial-gradient(1000px 320px at 15% 0%, rgba(14,165,233,.12), transparent 60%),
+        radial-gradient(900px 320px at 85% 0%, rgba(99,102,241,.10), transparent 60%),
+        var(--bg);
+    }
+    a{ color:var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .container{ width: min(var(--maxw), calc(100% - 40px)); margin: 0 auto; }
+    header{ padding: 56px 0 18px; text-align: center; }
+    h1{
+      margin: 0 0 10px;
+      font-family:"Fraunces", serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.4px;
+    }
+    .authors{ font-size: 15px; line-height: 1.9; }
+    .authors sup{ font-size: 11px; color: var(--muted); }
+    .affiliations{ font-size: 14px; color: var(--muted); margin-top: 6px; }
+    .notes{ font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+    .links{ display:flex; justify-content:center; flex-wrap:wrap; gap: 12px; margin-top: 14px; }
+    .chip{
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--fg);
+      cursor: pointer;
+    }
+
+    main{ padding: 0 0 40px; }
+    section{ padding: 18px 0; }
+    h2{ margin: 0 0 6px; font-size: 22px; }
+    h3{ margin: 12px 0 6px; font-size: 16px; }
+    p{ margin: 8px 0; line-height: 1.75; }
+    .muted{ color: var(--muted); }
+    .center{ text-align: center; }
+
+    .media{
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #0b1220;
+    }
+    .media img, .media video{ width:100%; display:block; }
+    .caption{ margin-top: 8px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 860px){
+      .grid.two{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    pre.bibtex{
+      margin:0; padding: 14px;
+      background: rgba(15,23,42,.04);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 12.5px;
+      line-height: 1.55;
+      overflow-x: auto;
+    }
+
+    footer{ padding: 24px 0 40px; color: var(--muted); font-size: 13px; }
+
+    ul.meta{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      line-height: 1.8;
+    }
+    ul.meta li{ margin: 4px 0; }
+  </style>
 </head>
+
 <body>
-  <section class="hero">
-    <h1>Your Project Title</h1>
-    <p class="authors">Author A, Author B, Author C</p>
-    <p class="affiliation">Your Lab / University</p>
-    <div class="links">
-      <a href="#">Paper</a>
-      <a href="#">Code</a>
-      <a href="#">Dataset</a>
+  <header class="container">
+    <h1>MagicBot-3DWA</h1>
+
+    <div class="authors">
+      <a href="#" target="_blank" rel="noopener">Author1</a><sup>1,2</sup>,
+      <a href="#" target="_blank" rel="noopener">Author2</a><sup>1</sup>,
+      <a href="#" target="_blank" rel="noopener">Author3</a><sup>2</sup>
+      <span class="muted">(* equal contribution)</span>
     </div>
-  </section>
 
-  <section>
-    <h2>Overview</h2>
-    <p>一句话介绍你的工作做了什么，为什么重要。</p>
-  </section>
+    <div class="affiliations">
+      <span><sup>1</sup>Tongji University</span>&nbsp;&nbsp;
+      <span><sup>2</sup>Shanghai Innovation Institution</span>
+    </div>
 
-  <section>
-    <h2>Method</h2>
-    <img src="assets/method.png" alt="method figure">
-  </section>
+    <div class="notes">Contact: 2510474@tongji.edu.cn</div>
 
-  <section>
-    <h2>Results</h2>
-    <video controls width="720" src="assets/demo1.mp4"></video>
-  </section>
+    <div class="links">
+      <a class="chip" href="https://arxiv.org/abs/2401.01234" target="_blank" rel="noopener">arXiv</a>
+      <a class="chip" href="assets/paper.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+      <a class="chip" href="https://github.com/example/embodied-video-planning" target="_blank" rel="noopener">Code</a>
+    </div>
+  </header>
 
-  <section>
-    <h2>Citation</h2>
-    <pre>@article{your2026project, ...}</pre>
-  </section>
+  <main class="container">
+
+    <section class="center">
+      <h2 class="center">Abstract</h2>
+      <p>
+        We present <b>MagicBot-3DWA</b>,
+      </p>
+    </section>
+
+    <section>
+      <h2>The Model</h2>
+      <p>
+        MagicBot-3DWA consists of a perception backbone, a 3D-aware world/action representation, and a
+        policy head that outputs executable control commands. The overall pipeline is trained end-to-end
+        (or in stages) to align visual understanding with action execution.
+      </p>
+      <div class="media">
+        <img src="assets/method.png" alt="Method overview" />
+      </div>
+      <div class="caption">
+        <b>Overview.</b> Framework diagram of MagicBot-3DWA. Replace this caption with the key message of your figure
+        (e.g., modules, training/inference flow, what “3DWA” means).
+      </div>
+    </section>
+
+    <!-- ===== Added: Data section ===== -->
+    <section>
+      <h2>Data</h2>
+      <p>
+        We evaluate MagicBot-3DWA on a collection of real-world and simulated manipulation tasks.
+        The dataset includes multi-view RGB observations, robot proprioception, and action labels.
+      </p>
+      <ul class="meta">
+        <li><b>Modalities:</b> RGB (multi-view), state/action, (optional: depth / point cloud / language instruction)</li>
+        <li><b>Scale:</b> N tasks, M episodes, total K frames (replace with your numbers)</li>
+        <li><b>Format:</b> HDF5 / LeRobot / your custom format (replace)</li>
+        <li><b>Download:</b> <a href="#" target="_blank" rel="noopener">Dataset link</a> (add link)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Real World Experiment</h2>
+      <p>
+        We validate MagicBot-3DWA on a real robot platform across multiple manipulation tasks under
+        varying initial conditions. The following videos compare our method with a baseline in the same setup.
+      </p>
+
+      <!-- Removed: "Video Generation and Autonomous Execution" block -->
+
+      <div class="grid two">
+        <div>
+          <h3>Task A (Ours)</h3>
+          <div class="media">
+            <video src="assets/real_1.mp4" controls playsinline></video>
+          </div>
+          <div class="caption">Replace with a short takeaway (e.g., stable grasp + precise placement).</div>
+        </div>
+
+        <div>
+          <h3>Task B (Ours)</h3>
+          <div class="media">
+            <video src="assets/real_2.mp4" controls playsinline></video>
+          </div>
+          <div class="caption">Replace with a short takeaway (e.g., robust under clutter and occlusion).</div>
+        </div>
+
+        <div>
+          <h3>Task A (Baseline)</h3>
+          <div class="media">
+            <video src="assets/real_3.mp4" controls playsinline></video>
+          </div>
+          <div class="caption">Replace with baseline failure mode (e.g., drift / missed grasp / instability).</div>
+        </div>
+
+        <div>
+          <h3>Task B (Baseline)</h3>
+          <div class="media">
+            <video src="assets/real_4.mp4" controls playsinline></video>
+          </div>
+          <div class="caption">Replace with baseline failure mode (e.g., slow convergence / poor robustness).</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sample Efficiency and Convergence Results on Simulated Benchmarks</h2>
+      <p>
+        We report sample efficiency and convergence curves on simulated benchmarks.
+        Our method achieves higher success rate with fewer training samples compared with baselines.
+      </p>
+      <div class="media">
+        <img src="assets/plot.png" alt="Quantitative results" />
+      </div>
+      <div class="caption">
+        Replace with what this figure shows (e.g., success rate vs steps; shaded variance; best-performing method).
+      </div>
+    </section>
+
+    <section id="bibtex">
+      <h2>BibTeX</h2>
+      <pre class="bibtex" id="bibtexText">@article{magicbot2026_3dwa,
+  title   = {MagicBot-3DWA},
+  author  = {Author1 and Author2 and Author3},
+  journal = {arXiv preprint arXiv:2401.01234},
+  year    = {2026}
+}</pre>
+      <div style="height:10px;"></div>
+      <button class="chip" id="copyBib" type="button">Copy BibTeX</button>
+      <span id="copyHint" class="muted" style="margin-left:10px; font-size:13px;"></span>
+    </section>
+
+    <footer>
+      <p style="margin:0 0 6px;">This website is a project-page template. Add license or attribution here.</p>
+      <p style="margin:0;">© <span id="year"></span> Your Lab · Built with GitHub Pages</p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const btn = document.getElementById('copyBib');
+      const hint = document.getElementById('copyHint');
+      const pre = document.getElementById('bibtexText');
+
+      if (btn && pre) {
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(pre.innerText);
+            if (hint) hint.textContent = 'Copied!';
+            setTimeout(() => { if (hint) hint.textContent = ''; }, 1200);
+          } catch (e) {
+            if (hint) hint.textContent = 'Copy failed (browser blocked clipboard).';
+            setTimeout(() => { if (hint) hint.textContent = ''; }, 1800);
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
